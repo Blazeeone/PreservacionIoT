@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0F172A"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- ================= PANTALLA 1: LOGIN MATERIAL DESIGN (ISO 27400) ================= -->
+        <LinearLayout
+            android:id="@+id/layoutLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="28dp"
+            android:visibility="visible">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#1E293B"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="8dp"
+                app:strokeColor="#334155"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="#064E3B"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="4dp"
+                        android:text="ESTÁNDAR OT • ISO/IEC 27400"
+                        android:textColor="#34D399"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center"
+                        android:text="Preservación Patrimonial IoT"
+                        android:textColor="#F8FAFC"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="24dp"
+                        android:gravity="center"
+                        android:text="Control Microclimático de Bóvedas y Museos"
+                        android:textColor="#94A3B8"
+                        android:textSize="13sp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:hint="Credencial de Operador"
+                        android:textColorHint="#94A3B8"
+                        app:boxStrokeColor="#38BDF8"
+                        app:hintTextColor="#38BDF8">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etUser"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+                            android:text="admin"
+                            android:textColor="#F8FAFC" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:hint="Clave Cifrada (SHA-256)"
+                        android:textColorHint="#94A3B8"
+                        app:boxStrokeColor="#38BDF8"
+                        app:endIconMode="password_toggle"
+                        app:endIconTint="#94A3B8"
+                        app:hintTextColor="#38BDF8">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etPass"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPassword"
+                            android:text="1234"
+                            android:textColor="#F8FAFC" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <Button
+                        android:id="@+id/btnLogin"
+                        android:layout_width="match_parent"
+                        android:layout_height="54dp"
+                        android:backgroundTint="#0284C7"
+                        android:text="Autenticar e Ingresar"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        app:cornerRadius="12dp" />
+
+                    <Button
+                        android:id="@+id/btnRegister"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="8dp"
+                        android:text="Registrar Nuevo Curador"
+                        android:textColor="#38BDF8"
+                        app:cornerRadius="12dp"
+                        app:strokeColor="#38BDF8" />
+
+                    <TextView
+                        android:id="@+id/tvLoginStatus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:gravity="center"
+                        android:text="Acceso precargado: admin / 1234"
+                        android:textColor="#38BDF8"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+
+        <!-- ================= PANTALLA 2: DASHBOARD IoT + CONTROL + PRUEBAS ================= -->
+        <LinearLayout
+            android:id="@+id/layoutDashboard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <!-- Encabezado de Estado y Seguridad -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                app:cardBackgroundColor="#1E293B"
+                app:cardCornerRadius="16dp"
+                app:strokeColor="#334155"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/tvWelcomeUser"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Operador: admin"
+                        android:textColor="#F8FAFC"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvSecurityBadge"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="🔒 ISO 27400 Activo: Hash SHA-256 + Integridad de Trama"
+                        android:textColor="#34D399"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Tarjeta de Telemetría y Control de Actuadores -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                app:cardBackgroundColor="#1E293B"
+                app:cardCornerRadius="16dp"
+                app:strokeColor="#38BDF8"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="18dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TELEMETRÍA EN TIEMPO REAL • BÓVEDA N°1"
+                        android:textColor="#94A3B8"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:paddingEnd="8dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Temperatura (TMP36)"
+                                android:textColor="#CBD5E1"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/tvTempValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="19.5 °C"
+                                android:textColor="#34D399"
+                                android:textSize="30sp"
+                                android:textStyle="bold" />
+
+                            <ProgressBar
+                                android:id="@+id/pbTemp"
+                                style="?android:attr/progressBarStyleHorizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="8dp"
+                                android:layout_marginTop="4dp"
+                                android:max="30"
+                                android:progress="19"
+                                android:progressTint="#34D399" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:paddingStart="8dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Humedad Relativa"
+                                android:textColor="#CBD5E1"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/tvHumValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="48 %"
+                                android:textColor="#38BDF8"
+                                android:textSize="30sp"
+                                android:textStyle="bold" />
+
+                            <ProgressBar
+                                android:id="@+id/pbHum"
+                                style="?android:attr/progressBarStyleHorizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="8dp"
+                                android:layout_marginTop="4dp"
+                                android:max="100"
+                                android:progress="48"
+                                android:progressTint="#38BDF8" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvActuatorStatus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:background="#0F172A"
+                        android:padding="10dp"
+                        android:text="Estado HVAC: APAGADO (Conservación Óptima 18°C - 21°C)"
+                        android:textColor="#E2E8F0"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Switch
+                        android:id="@+id/swManualFan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Forzar Extractor HVAC Manualmente (Control Remoto)"
+                        android:textColor="#CBD5E1"
+                        android:textSize="13sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Tarjeta de Interconexión Inalámbrica entre 2 Dispositivos -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                app:cardBackgroundColor="#1E293B"
+                app:cardCornerRadius="16dp"
+                app:strokeColor="#334155"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="INTERCONEXIÓN INALÁMBRICA (2 DISPOSITIVOS ANDROID)"
+                        android:textColor="#38BDF8"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btnStartEmitter"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="10dp"
+                        android:backgroundTint="#0D9488"
+                        android:text="1. Iniciar como Dispositivo Emisor (Nodo Sensor)"
+                        android:textColor="#FFFFFF"
+                        app:cornerRadius="10dp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:hint="IP del Dispositivo Emisor (ej. 192.168.43.1)"
+                        android:textColorHint="#94A3B8"
+                        app:boxStrokeColor="#38BDF8">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etServerIp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="127.0.0.1"
+                            android:textColor="#F8FAFC" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <Button
+                        android:id="@+id/btnConnectReceiver"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="8dp"
+                        android:backgroundTint="#4F46E5"
+                        android:text="2. Conectar como Dispositivo Receptor (Monitor)"
+                        android:textColor="#FFFFFF"
+                        app:cornerRadius="10dp" />
+
+                    <Button
+                        android:id="@+id/btnSimulateLocal"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="6dp"
+                        android:backgroundTint="#D97706"
+                        android:text="Simular Lectura de Sensor Ahora"
+                        android:textColor="#FFFFFF"
+                        app:cornerRadius="10dp" />
+
+                    <TextView
+                        android:id="@+id/tvConnectionStatus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Estado Red: Listo para enlazar por Wi-Fi / Hotspot."
+                        android:textColor="#94A3B8"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Tarjeta de Pruebas de Funcionamiento (Exigencia Paso 3 Guía) -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                app:cardBackgroundColor="#1E293B"
+                app:cardCornerRadius="16dp"
+                app:strokeColor="#10B981"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="SUITE DE PRUEBAS DE FUNCIONAMIENTO (PASO 3 GUÍA)"
+                        android:textColor="#34D399"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btnRunTests"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="8dp"
+                        android:backgroundTint="#059669"
+                        android:text="Ejecutar Autodiagnóstico de las 4 Pruebas"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        app:cornerRadius="10dp" />
+
+                    <TextView
+                        android:id="@+id/tvTestResults"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="#0F172A"
+                        android:fontFamily="monospace"
+                        android:padding="10dp"
+                        android:text="Presiona el botón para validar Login, Red IoT, SQLite e ISO 27400."
+                        android:textColor="#A7F3D0"
+                        android:textSize="11sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Tarjeta de Historial en Base de Datos SQLite -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="#1E293B"
+                app:cardCornerRadius="16dp"
+                app:strokeColor="#334155"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="AUDITORÍA HISTÓRICA EN BASE DE DATOS (SQLITE)"
+                        android:textColor="#F8FAFC"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvHistoryList"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="#0F172A"
+                        android:fontFamily="monospace"
+                        android:padding="12dp"
+                        android:text="Sin lecturas registradas."
+                        android:textColor="#CBD5E1"
+                        android:textSize="11sp" />
+
+                    <Button
+                        android:id="@+id/btnClearHistory"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:text="Limpiar Historial SQLite"
+                        android:textColor="#F87171" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <Button
+                android:id="@+id/btnLogout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:backgroundTint="#EF4444"
+                android:text="Cerrar Sesión Segura"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                app:cornerRadius="12dp" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
